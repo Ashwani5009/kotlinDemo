@@ -1,6 +1,14 @@
 // fun getGreeting(greeting:String,itemToGreet:String) = println("$greeting $itemToGreet")
-fun sayHello(greeting:String , itemsToGreet:List<String>){
-  itemsToGreet.forEach{ item ->
+// fun sayHello(greeting:String , itemsToGreet:List<String>){
+//   itemsToGreet.forEach{ item ->
+//     println("$greeting $item")
+//   }
+// }
+
+// USE OF VARARG PARAMETERS
+// vararg itemsToGreet:String ---> arrayOf<String> (with this we can no parameter if needed)
+fun sayHello(greeting:String , vararg itemsToGreet:String){
+  itemsToGreet.forEach{ item->
     println("$greeting $item")
   }
 }
@@ -26,7 +34,8 @@ fun main(){
   // arrayOf or listOf
   // by default collections are immutable
   //val items = arrayOf("kotlin","java","c++")
-  val items = mutableListOf("kotlin","java","c++")
+  // val items = mutableListOf("kotlin","java","c++")
+  val items = arrayOf("kotlin","java","c++")
   // println(items.size) // 3
   // println(items[0]) // kotlin
   // println(items.get(0)) // kotlin
@@ -56,5 +65,8 @@ fun main(){
   //   println("$key -> $value")
   // }
   
-  sayHello("hello",items)
+  // sayHello("hello",*items)
+  
+  val person1 = person("ashwani","kumar")
+  println(person1.firstName)
 }
